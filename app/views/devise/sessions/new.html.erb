@@ -6,7 +6,7 @@
         <label>Email</label>
         <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "Email" %>
         <label>Password</label>
-        <%= f.email_field :password, autofocus: true, class: "form-control", autocomplete: "Current password" %>
+        <%= f.password_field :password, autofocus: true, class: "form-control", autocomplete: "Current password" %>
         <% if devise_mapping.rememberable? %>
           <div class="checkbox mb-3">
             <%= f.check_box :remember_me %>

@@ -10,9 +10,9 @@
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.email_field :password, autofocus: true, class: "form-control", autocomplete: "New password" %>
+        <%= f.password_field :password, autofocus: true, class: "form-control", autocomplete: "New password" %>
         <label>Password confirmation</label>
-        <%= f.email_field :password_confirmation, autofocus: true, class: "form-control", autocomplete: "New password" %>
+        <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", autocomplete: "New password" %>
         <%= f.submit "Sign up", class: "btn btn-dark" %>
       <% end %>
       <div class="pt-3">
