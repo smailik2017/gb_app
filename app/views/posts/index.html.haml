@@ -1,0 +1,25 @@
+%main
+  %section.py-5.text-center.container
+    .row.py-lg-5
+      .col-lg-6.col-md-8.mx-auto
+        %h1.fw-light News
+        %p#notice= notice
+        %h1 Posts
+        %table
+          %thead
+            %tr
+              %th Name
+              %th Title
+              %th Content
+              %th{:colspan => "3"}
+          %tbody
+            - @posts.each do |post|
+              %tr
+                %td= post.name
+                %td= post.title
+                %td= post.content
+                %td= link_to 'Show', post
+                %td= link_to 'Edit', edit_post_path(post)
+                %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %br/
+        = link_to 'New Post', new_post_path
