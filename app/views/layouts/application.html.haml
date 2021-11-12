@@ -8,6 +8,10 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body{class: "main-color"}
     = render 'layouts/navigation'
-    = yield
+    %main
+    %section.py-6.container
+      .row
+        .col-lg-10.col-md-8.mx-auto
+          = yield

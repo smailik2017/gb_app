@@ -3,18 +3,18 @@
     = image_tag("logo.png", class: "img-responsive", id: "navbar-logo", style: 'height:50px;width:auto; padding-right: 15px')
     %ul.navbar-nav.me-auto.mb-2.mb-lg-0
       %li.nav-item
-        %a.navbar-brand{:href => "#"} News
+        = link_to 'News', posts_path, class: "nav-link active"
     %form.d-flex
-      %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-      %button.btn.btn-outline-secondary{:type => "submit"}
-        %svg.bi.bi-search{:fill => "currentColor", :height => "16", :viewbox => "0 0 16 16", :width => "16", :xmlns => "http://www.w3.org/2000/svg"}
-          %path{:d => "M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"}
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light.px-15
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item.pr-3
+          = link_to 'New post', new_post_path, class: "nav-link active"
+%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-15
   .container-fluid
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.me-auto.mb-2.mb-lg-0
         %li.nav-item.pr-3
-          %a.nav-link{:href => "#"} All topics
+          = link_to 'All topics', posts_path, class: "nav-link active"
+          %a.nav-link{:href => "#"}
         %li.nav-item.px-3
           %a.nav-link{:href => "#"} Ruby
         %li.nav-item.px-3
