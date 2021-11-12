@@ -1,0 +1,14 @@
+.container.pt-5
+  .row.justify-content-center
+    .col.col-4
+      %h1.h3.mb-3.font-weight-normal Resend confirmation instructions
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name),  html: { method: :post })  do |f|
+        = render "devise/shared/error_messages", resource: resource
+        %label Email
+        = f.email_field :email, autofocus: true, class: "form-control", autocomplete: "Email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+        %label Confirm new password
+        = f.password_field :password_confirmation, autofocus: true, class: "form-control", autocomplete: "New password"
+        .pt-3
+          = f.submit "Resend confirmation instructions", class: "btn btn-dark"
+      .pt-3
+        = render "devise/shared/links"

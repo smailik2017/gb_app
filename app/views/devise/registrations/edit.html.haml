@@ -1,0 +1,33 @@
+.container.pt-5
+  .row.justify-content-center
+    .col.col-4
+      %h1.h3.mb-3.font-weight-normal
+        Edit #{resource_name.to_s.humanize}
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin", method: :put }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        %label Email
+        = f.email_field :email, autofocus: true, class: "form-control", autocomplete: "Email"
+        %label
+          Password
+          %i (leave blank if you don't want to change it)
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autofocus: true, class: "form-control", autocomplete: "New password"
+        %label Password confirmation
+        = f.password_field :password_confirmation, autofocus: true, class: "form-control", autocomplete: "New password"
+        %label
+          Current password
+          %i (we need your current password to confirm your changes)
+        = f.password_field :current_password, autofocus: true, class: "form-control", autocomplete: "Current password"
+        .pt-3
+          = f.submit "Update", class: "btn btn-dark"
+      .pt-3
+        = render "devise/shared/links"
+      .pt-3
+        %h5 Cancel my account
+        %p
+          Unhappy?
+          \#{button_to "Cancel my account", registration_path(resource_name), class: "btn btn-outline-danger btn-sm", data: { confirm: "Are you sure?" }, method: :delete}
+        = link_to "Back", :back

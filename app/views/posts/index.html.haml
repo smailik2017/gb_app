@@ -1,0 +1,8 @@
+%p#notice= notice
+- @posts.each do |post|
+  %div{class: 'container-fluid post'}
+    %div
+      %h2
+        = link_to post.name, post, class: "link-dark"
+    %div
+      = post.content

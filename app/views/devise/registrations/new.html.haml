@@ -1,0 +1,19 @@
+.container.pt-5
+  .row.justify-content-center
+    .col.col-4
+      %h1.h3.mb-3.font-weight-normal Sign up
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin" }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        %label Email
+        = f.email_field :email, autofocus: true, class: "form-control", autocomplete: "Email"
+        %label Password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autofocus: true, class: "form-control", autocomplete: "New password"
+        %label Password confirmation
+        = f.password_field :password_confirmation, autofocus: true, class: "form-control", autocomplete: "New password"
+        = f.submit "Sign up", class: "btn btn-dark"
+      .pt-3
+        = render "devise/shared/links"

@@ -1,0 +1,5 @@
+= form_for @user, url: profiles_path do |f|
+  .field
+    = f.label :info
+    = f.rich_text_area :info
+  = f.submit 'Save',  class: "btn btn-dark mt-3"

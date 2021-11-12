@@ -1,0 +1,23 @@
+= form_with(model: post, class: "row g-3") do |form|
+  - if post.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(post.errors.count, "error")
+        prohibited this post from being saved:
+      %ul
+        - post.errors.each do |error|
+          %li= error.full_message
+  %div{ class: "row mb-3 " }
+    .field
+      = form.label :name, class: "col-sm-2 col-form-label"
+      = form.text_field :name,  class: "form-control"
+  %div{ class: "row mb-3 " }
+    .field
+      = form.label :title, class: "col-sm-2 col-form-label"
+      = form.text_field :title,  class: "form-control"
+  %div{ class: "row mb-3 " }
+    .field
+      = form.label :content, class: "col-sm-2 col-form-label"
+      = form.rich_text_area :info
+  .actions
+    = form.submit class: "btn btn-primary mb-3"
