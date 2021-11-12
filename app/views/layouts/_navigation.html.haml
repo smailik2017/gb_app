@@ -29,8 +29,11 @@
                 %span Profile
               %ul.dropdown-menu.dropdown-menu--nav-bar{"aria-labelledby" => "navbarDropdown"}
                 %li
-                  %a.dropdown-item{:href => "#"} My profile
-                = link_to 'Edit profile', edit_user_registration_path, class: "dropdown-item"
+                  = link_to 'My profile', profiles_path, class: "dropdown-item"
+                %li
+                = link_to 'Edit profile', edit_profiles_path, class: "dropdown-item"
+                %li
+                = link_to 'User settings', edit_user_registration_path, class: "dropdown-item"
                 %li
                   %hr.dropdown-divider/
                 %li
