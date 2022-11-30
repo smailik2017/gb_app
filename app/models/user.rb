@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_rich_text :info
-
+  has_many :posts
+  
 end
