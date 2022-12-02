@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_rich_text :info
   has_many :posts
+
+  has_many :likes
   
 end
