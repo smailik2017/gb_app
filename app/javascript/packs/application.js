@@ -9,6 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
+import "src/profile.js" // теперь src/profile.js доступен во всем приложении
+import "src/post.js" // теперь src/post.js доступен во всем приложении
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

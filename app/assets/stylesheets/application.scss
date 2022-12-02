@@ -45,3 +45,17 @@
   padding: 20px;
   margin: 10px 0;
 }
+
+.button {
+  color: white;
+  margin-top: 5px;
+  &--green {
+    background-color: green;
+  }
+  &--blue {
+    background-color: blue;
+  }
+    &--red {
+    background-color: red;
+  }
+}

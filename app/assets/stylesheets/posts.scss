@@ -1,3 +1,11 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.fa-solid.fa-heart {
+  color: black;
+  margin-top: 5px;
+  &--red {
+    color: red;
+  }
+}
