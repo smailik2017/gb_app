@@ -6,7 +6,7 @@ const changeHeartClass = (heartElement, color) => {
 const handleClick = async (event) => {
   str = window.location.toString().split('/');
   post_id = str[str.length - 1]
-  console.log(`post_id: ${post_id}`);
+  // console.log(`post_id: ${post_id}`);
   color = event.target.className.includes('red') ? '' : 'red'
   changeHeartClass(event.target, color);
 
