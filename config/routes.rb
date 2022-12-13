@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :posts
   
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :comments, only: [:index, :show, :create, :destroy]
+  #   end
+  # end
+
   devise_for :users
   resource :profiles, only: [:edit, :update, :show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resource :likes, only: [:create]
 end
