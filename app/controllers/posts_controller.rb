@@ -21,6 +21,10 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
+    tmp_post_params = post_params
+    tmp_post_params["user_id"] = current_user.id
+    post_params = tmp_post_params
+
     @post = Post.new(post_params)
 
     respond_to do |format|

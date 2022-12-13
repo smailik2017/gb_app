@@ -32,4 +32,3 @@ window.addEventListener('turbolinks:load', function () {
       heartElement.addEventListener("click", handleClick);
   }
 })
-  
