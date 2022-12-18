@@ -1,0 +1,16 @@
+- if @found_posts.present?
+  %h1
+    Search Result
+  - @found_posts.each do |post|
+    %div{class: 'container-fluid post'}
+      %div
+        %h2
+          = link_to post.name, post, class: "link-dark", data: { turbolinks: false }
+      %div
+        = post.content
+- else
+  %h1
+    Empty
+
+%button{ class: "btn btn-primary mb-3", onclick: "location.href='/posts'" }
+  Reset

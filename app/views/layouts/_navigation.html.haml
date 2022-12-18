@@ -8,6 +8,10 @@
       %ul.navbar-nav.me-auto.mb-2.mb-lg-0
         %li.nav-item.pr-3
           = link_to 'New post', new_post_path, class: "nav-link active"
+          - if current_user&.admin?
+            %li.nav-item
+            = link_to 'Admin Dashboard', admin_root_path, class: "nav-link active"
+
 %nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-15
   .container-fluid
     #navbarSupportedContent.collapse.navbar-collapse

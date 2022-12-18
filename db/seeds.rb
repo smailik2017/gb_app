@@ -19,3 +19,6 @@ end
 (1..POSTS_COUNT).each do |p|
     Post.create!(name: "Post#{p}", title: "Post title #{p}", user: User.all.sample)
 end
+
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
