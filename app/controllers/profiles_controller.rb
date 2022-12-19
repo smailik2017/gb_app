@@ -9,5 +9,6 @@ class ProfilesController < ApplicationController
 
   def update
     current_user.update!(params.require(:user).permit(:info))
+    redirect_to edit_profiles_path
   end
 end

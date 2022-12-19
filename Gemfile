@@ -68,3 +68,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'activeadmin'
+
+gem 'rexml'
+gem 'rspec-rails'
+
+gem 'factory_bot_rails'
