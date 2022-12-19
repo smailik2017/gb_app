@@ -3,7 +3,12 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order(:id).paginate(page: params[:page], per_page: 7)
+    # @posts = Post.all.order(:id).paginate(page: params[:page], per_page: 7)
+    if params[:query] 
+      @posts = Post.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @posts = Post.all.order(:id).paginate(page: params[:page], per_page: 5)
+    end
   end
 
   # GET /posts/1 or /posts/1.json
@@ -58,6 +63,20 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    if params[:order] == "0"
+      @found_posts = Post.search_scope(params[:query]).order(:name)
+    else
+      @found_posts = Post.search_scope(params[:query]).order(:created_at)
+    end
+    render layout: false
+  end
+
+  def autocomplete
+    @autocomplete_results = Post.search_scope(params[:q])
+    render layout: false
   end
 
   private
